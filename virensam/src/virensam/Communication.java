@@ -33,7 +33,7 @@ public class Communication extends JFrame implements ActionListener{
 		Camera.setPaintTicks(true);
 		Camera.setMajorTickSpacing(1);
 		
-		Hashtable<Integer, JLabel> table = new Hashtable<Integer,JLabel>();
+		Hashtable<Integer, JLabel> table = new Hashtable<Integer,JLabel>(); //Marking JSlider
 		
 		table.put (0,new JLabel("0"));
 		table.put (1,new JLabel("1"));
@@ -67,7 +67,7 @@ public class Communication extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String input = jtfinput.getText();
-		int iinput = Integer.parseInt(input);
+		int iinput = Integer.parseInt(input); //Parse string to integer
 		
 		Camera.setValue(iinput);
 	}
