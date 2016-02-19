@@ -11,13 +11,20 @@ import javax.swing.JLabel;
 import javax.swing.JSlider;
 import javax.swing.JTextField;
 
-
+/**
+ * 
+ * @author Sam
+ *
+ */
 public class Communication extends JFrame implements ActionListener{
 	
 	JTextField jtfinput;
 	JButton jbsend;
 	JSlider Camera;
 	
+	/**
+	 * 
+	 */
 	public Communication(){
 		super ("Matthew Damon on Mars");
 		
@@ -25,7 +32,7 @@ public class Communication extends JFrame implements ActionListener{
 		jtfinput = new JTextField();
 		jbsend = new JButton("Send");
 		
-		jbsend.addActionListener(this);
+		jbsend.addActionListener(this);  //Action listener for button click event
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -33,7 +40,7 @@ public class Communication extends JFrame implements ActionListener{
 		Camera.setPaintTicks(true);
 		Camera.setMajorTickSpacing(1);
 		
-		Hashtable<Integer, JLabel> table = new Hashtable<Integer,JLabel>(); //Marking JSlider
+		Hashtable<Integer, JLabel> table = new Hashtable<Integer,JLabel>(); //Marking JSlider with the use of a Hashtable
 		
 		table.put (0,new JLabel("0"));
 		table.put (1,new JLabel("1"));
@@ -58,12 +65,19 @@ public class Communication extends JFrame implements ActionListener{
  		this.add(jbsend,BorderLayout.SOUTH);
 	}
 
+	/**
+	 * Main method
+	 * @param args Command line arguments
+	 */
 	public static void main(String args[]) {
 		JFrame Communication = new Communication();
 		Communication.setVisible(true);
 		Communication.setSize(400, 500);
-		
 	}
+	
+	/**
+	 * Action event where value of Camera is set to integer in jtfinput
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String input = jtfinput.getText();
@@ -71,7 +85,7 @@ public class Communication extends JFrame implements ActionListener{
 		
 		Camera.setValue(iinput);
 	}
-	
+
 
 	
 }
