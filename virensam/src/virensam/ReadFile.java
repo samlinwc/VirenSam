@@ -12,12 +12,14 @@ import java.util.Scanner;
  */
 public class ReadFile {
 	
+	static HashMap<String, String> symboltohex = new HashMap<>();
+	
 	/**
 	 * Puts everything needed in a HashMap
 	 */
-	public void fileInit(){
+	private void fileInit(){
 		
-		HashMap<String, String> map = new HashMap<>();
+		
 		String line;
 		File file = new File("ascii_table.csv");
 		try {
@@ -25,7 +27,7 @@ public class ReadFile {
 			while (sc.hasNextLine()){
 				String data = sc.nextLine();   //Gets whole line
 				String [] values = data.split(",");
-				map.put(values[2], values[4]);
+				symboltohex.put(values[4], values[2]);
 			}
 			sc.close();
 		} catch (FileNotFoundException e) {

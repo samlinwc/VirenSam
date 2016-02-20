@@ -3,7 +3,9 @@ package virensam;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 import java.util.Hashtable;
+import java.util.Map;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -59,6 +61,7 @@ public class Communication extends JFrame implements ActionListener{
  		table.put(14, new JLabel("E"));
  		table.put(15, new JLabel("F"));
  		Camera.setLabelTable(table);
+ 		
 	
 		this.add(jtfinput,BorderLayout.CENTER);
  		this.add(Camera, BorderLayout.NORTH);
@@ -80,15 +83,33 @@ public class Communication extends JFrame implements ActionListener{
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		String input = jtfinput.getText();
-		char characters[] = input.toCharArray();
-		map.get(characters);
+		String input = jtfinput.getText();       //Get input
+		char characters[] = input.toCharArray(); //Turns input into an array of characters
+		String[] hex = new String[0];
+		
+		for (int i =0; i<characters.length; i++){
+			hex = new String [characters.length];
+			hex [i]= ReadFile.symboltohex.get(characters[i]);	
+		}
 		
 		
 		
-		Camera.setValue();
 	}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+}	
+	
+
 
 
 	
-}
+
