@@ -81,9 +81,12 @@ public class Communication extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String input = jtfinput.getText();
-		int iinput = Integer.parseInt(input); //Parse string to integer
+		char characters[] = input.toCharArray();
+		map.get(characters);
 		
-		Camera.setValue(iinput);
+		
+		
+		Camera.setValue();
 	}
 
 

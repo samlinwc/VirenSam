@@ -5,9 +5,17 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ * 
+ * @author Sam
+ *
+ */
 public class ReadFile {
 	
-	private void fileInit(){
+	/**
+	 * Puts everything needed in a HashMap
+	 */
+	public void fileInit(){
 		
 		HashMap<String, String> map = new HashMap<>();
 		String line;
@@ -25,11 +33,7 @@ public class ReadFile {
 			e.printStackTrace();
 		}
 		
-			
-		
-		
 	}
-	
 	
 }
 
